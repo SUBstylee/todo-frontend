@@ -12,7 +12,7 @@ export default function Home() {
 		console.log('useEffect');
 	}, []);
 	return (
-		<div className='min-h-screen bg-[#1a1a1a] text-white'>
+		<div className='min-h-screen bg-[#1a1a1a] text-white flex flex-col items-center'>
 			<Header />
 			<ButtonCreateTask />
 		</div>
