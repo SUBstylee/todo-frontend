@@ -21,7 +21,7 @@ export default function Home() {
 					textContent={'Create Task'}
 					width={20}
 					height={20}
-					src='/addtask.svg'
+					imgSrc='/addtask.svg'
 					alt='Create Task Plus Icon'
 					className='inline-block'
 				/>

@@ -12,7 +12,7 @@ export interface TaskCounterProps {
 export interface Button {
 	width?: number;
 	height?: number;
-	src?: string;
+	imgSrc?: string;
 	alt?: string;
 	className?: string;
 	textContent: string;

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Button } from '../types/types';
 
 const AppButton = ({
-	src,
+	imgSrc,
 	alt,
 	width,
 	height,
@@ -14,9 +14,9 @@ const AppButton = ({
 		<Link href='/create'>
 			<button className='w-full bg-blue-500 text-white cursor-pointer rounded-md hover:bg-blue-600 px-6 py-3 transition flex items-center justify-center gap-2 -mt-6'>
 				<span>{textContent}</span>
-				{src && (
+				{imgSrc && (
 					<Image
-						src={src}
+						src={imgSrc}
 						alt={alt || ''}
 						width={width}
 						height={height}
