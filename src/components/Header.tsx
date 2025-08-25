@@ -5,7 +5,20 @@ const Header = () => {
 		<header
 			className='w-full flex flex-col items-center p-8'
 			style={{ backgroundColor: '#0d0d0d' }}>
-			Header
+			<h1 className='text-4xl font-bold text-center mb-6'>
+				<span role='img' aria-label='Rocket'>
+					<Image
+						src='/rocket.svg'
+						alt='Todo Rocket Icon'
+						width={25}
+						height={25}
+						className='inline-block'
+						style={{ width: 'auto', height: 'auto' }}
+					/>
+				</span>{' '}
+				<span style={{ color: '#4ea8de' }}>Todo</span>{' '}
+				<span style={{ color: '#5e60ce' }}>App</span>
+			</h1>
 		</header>
 	);
 };
