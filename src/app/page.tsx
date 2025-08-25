@@ -5,6 +5,7 @@ import { Task } from '../types/types';
 import Header from '@/components/Header';
 import ButtonCreateTask from '@/components/ButtonCreateTask';
 import TaskCounter from '@/components/TaskCounter';
+import TaskList from '@/components/TaskList';
 
 export default function Home() {
 	const [tasks, setTasks] = useState<Task[]>([]);
@@ -19,6 +20,7 @@ export default function Home() {
 				<ButtonCreateTask />
 				<TaskCounter tasks={tasks} />
 			</div>
+			<TaskList />
 		</div>
 	);
 }
