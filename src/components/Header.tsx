@@ -16,8 +16,8 @@ const Header = () => {
 						style={{ width: 'auto', height: 'auto' }}
 					/>
 				</span>{' '}
-				<span style={{ color: '#4ea8de' }}>Todo</span>{' '}
-				<span style={{ color: '#5e60ce' }}>App</span>
+				<span style={{ color: '#4EA8DE' }}>Todo</span>{' '}
+				<span style={{ color: '#5E60CE' }}>App</span>
 			</h1>
 		</header>
 	);
