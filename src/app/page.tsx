@@ -20,7 +20,9 @@ export default function Home() {
 				<ButtonCreateTask />
 				<TaskCounter tasks={tasks} />
 			</div>
-			<TaskList />
+			<main className='w-full max-w-2xl mt-6'>
+				<TaskList />
+			</main>
 		</div>
 	);
 }
