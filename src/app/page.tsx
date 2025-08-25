@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Task } from '../types/types';
 
 import Header from '@/components/Header';
+import ButtonCreateTask from '@/components/ButtonCreateTask';
 
 export default function Home() {
 	const [tasks, setTasks] = useState<Task[]>([]);
@@ -13,6 +14,7 @@ export default function Home() {
 	return (
 		<div className='min-h-screen bg-[#1a1a1a] text-white'>
 			<Header />
+			<ButtonCreateTask />
 		</div>
 	);
 }
