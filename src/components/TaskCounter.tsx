@@ -1,11 +1,7 @@
 import React from 'react';
-import { Task } from '../types/types';
+import { TaskCounterProps } from '../types/types';
 
-type Props = {
-	tasks: Task[];
-};
-
-const TaskCounter = ({ tasks }: Props) => {
+const TaskCounter = ({ tasks }: TaskCounterProps) => {
 	return (
 		<div className='flex justify-between w-full mt-14 text-gray-400'>
 			<div style={{ color: '#4EA8DE' }}>

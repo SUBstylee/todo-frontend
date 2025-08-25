@@ -4,3 +4,7 @@ export interface Task {
 	completedStatus: boolean;
 	color?: string;
 }
+
+export interface TaskCounterProps {
+	tasks: Task[];
+}
