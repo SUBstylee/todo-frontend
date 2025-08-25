@@ -8,3 +8,12 @@ export interface Task {
 export interface TaskCounterProps {
 	tasks: Task[];
 }
+
+export interface Button {
+	width?: number;
+	height?: number;
+	src?: string;
+	alt?: string;
+	className?: string;
+	textContent: string;
+}
