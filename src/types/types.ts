@@ -38,3 +38,10 @@ export interface TaskFormProps {
 	placeHolder: string;
 	handleSubmit: () => void;
 }
+
+export interface InputProps {
+	title: string;
+	setTitle: (title: string) => void;
+	label: string;
+	placeHolder: string;
+}
