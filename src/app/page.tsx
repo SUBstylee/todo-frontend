@@ -7,18 +7,32 @@ import Header from '@/components/Header';
 import AppButton from '@/components/AppButton';
 import TaskCounter from '@/components/TaskCounter';
 import TaskList from '@/components/TaskList';
+import Loading from '@/components/Loading';
 
-import { mockTasks } from '@/constants/stub';
+import { fetchTasks } from '@/utils/api';
+
 import copy from '@/data/copy.json';
 
-export default function Home() {
-	const [tasks, setTasks] = useState<TaskProps[]>(mockTasks);
+const Home = () => {
+	const [tasks, setTasks] = useState<TaskProps[]>([]);
+	const [isLoading, setIsLoading] = useState(true);
 	const completedTasks = tasks.filter((task) => task.completedStatus);
 	const router = useRouter();
 
 	useEffect(() => {
-		console.log('useEffect');
+		const getTasks = async () => {
+			try {
+				const data = await fetchTasks();
+				setTasks(data);
+			} catch (error) {
+				console.error('Error fetching tasks:', error);
+			} finally {
+				setIsLoading(false);
+			}
+		};
+		getTasks();
 	}, []);
+
 	return (
 		<div
 			className={
@@ -39,8 +53,10 @@ export default function Home() {
 				<TaskCounter tasks={tasks} completedTasks={completedTasks} />
 			</div>
 			<main className={'w-full max-w-2xl mt-6'}>
-				<TaskList tasks={tasks} />
+				{isLoading ? <Loading /> : <TaskList tasks={tasks} />}
 			</main>
 		</div>
 	);
-}
+};
+
+export default Home;
