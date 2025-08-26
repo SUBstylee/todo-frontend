@@ -10,7 +10,7 @@ const BackButton: React.FC = () => {
 		<button
 			onClick={handleBackClick}
 			className='self-start text-blue-500 mb-6 cursor-pointer'>
-			<Image src='arrow-left.svg' height={14} width={14} alt='Go Back' />
+			<Image src='/arrow-left.svg' height={14} width={14} alt='Go Back' />
 		</button>
 	);
 };
