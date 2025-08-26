@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 import copy from '@/data/copy.json';
 
-const TaskItem = ({ task }: TaskItemProps) => {
+const TaskItem = ({ task, toggleCompletion }: TaskItemProps) => {
 	return (
 		<div
 			key={task.id}
@@ -26,7 +26,7 @@ const TaskItem = ({ task }: TaskItemProps) => {
 					<input
 						type={'checkbox'}
 						checked={task.completedStatus}
-						onChange={() => console.log('checkbox clicked')}
+						onChange={() => toggleCompletion(task.id)}
 						className={'opacity-0 absolute w-full h-full cursor-pointer'}
 					/>
 					{task.completedStatus && (

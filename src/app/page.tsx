@@ -9,7 +9,7 @@ import TaskCounter from '@/components/TaskCounter';
 import TaskList from '@/components/TaskList';
 import Loading from '@/components/Loading';
 
-import { fetchTasks } from '@/utils/api';
+import { fetchTasks, toggleCompletion } from '@/utils/api';
 
 import copy from '@/data/copy.json';
 
@@ -53,7 +53,14 @@ const Home = () => {
 				<TaskCounter tasks={tasks} completedTasks={completedTasks} />
 			</div>
 			<main className={'w-full max-w-2xl mt-6'}>
-				{isLoading ? <Loading /> : <TaskList tasks={tasks} />}
+				{isLoading ? (
+					<Loading />
+				) : (
+					<TaskList
+						tasks={tasks}
+						toggleCompletion={(id) => toggleCompletion(id, tasks, setTasks)}
+					/>
+				)}
 			</main>
 		</div>
 	);

@@ -3,11 +3,17 @@ import { TaskListProps } from '@/types/types';
 import TaskItem from './TaskItem';
 import copy from '@/data/copy.json';
 
-const TaskList = ({ tasks }: TaskListProps) => {
+const TaskList = ({ tasks, toggleCompletion }: TaskListProps) => {
 	return (
 		<div className={'w-full max-w-2xl flex flex-col gap-4 mb-6'}>
 			{tasks.length ? (
-				tasks.map((task) => <TaskItem key={task.id} task={task} />)
+				tasks.map((task) => (
+					<TaskItem
+						key={task.id}
+						task={task}
+						toggleCompletion={toggleCompletion}
+					/>
+				))
 			) : (
 				<div className={'flex flex-col items-center text-center'}>
 					<hr
