@@ -27,6 +27,7 @@ const TaskForm = ({
 			/>
 			<div className='w-full max-w-2xl flex flex-col relative'>
 				<AppButton
+					handleClick={handleSubmit}
 					textContent={'Add Task'}
 					width={20}
 					height={20}

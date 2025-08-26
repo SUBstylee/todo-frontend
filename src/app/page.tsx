@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { TaskProps } from '../types/types';
+import { useRouter } from 'next/navigation';
 
 import Header from '@/components/Header';
 import AppButton from '@/components/AppButton';
@@ -12,6 +13,7 @@ import { mockTasks } from '@/constants/stub';
 export default function Home() {
 	const [tasks, setTasks] = useState<TaskProps[]>(mockTasks);
 	const completedTasks = tasks.filter((task) => task.completedStatus);
+	const router = useRouter();
 
 	useEffect(() => {
 		console.log('useEffect');
@@ -21,6 +23,7 @@ export default function Home() {
 			<Header />
 			<div className='w-full max-w-2xl flex flex-col relative'>
 				<AppButton
+					handleClick={() => router.push('/create')}
 					textContent={'Create Task'}
 					width={20}
 					height={20}

@@ -18,6 +18,7 @@ export interface ButtonProps {
 	imgClassName?: string;
 	btnClassName?: string;
 	textContent: string;
+	handleClick: () => void;
 }
 
 export interface TaskItemProps {
