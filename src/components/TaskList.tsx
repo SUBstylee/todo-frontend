@@ -6,7 +6,7 @@ const TaskList = ({ tasks }: TaskListProps) => {
 	return (
 		<div>
 			{tasks.length ? (
-				tasks.map((task) => <TaskItem key={task.id} />)
+				tasks.map((task) => <TaskItem key={task.id} task={task} />)
 			) : (
 				<div className='flex flex-col items-center text-center'>
 					<hr className='w-full h-[15px] border-t border-solid border-gray-500 rounded-full mb-5' />
