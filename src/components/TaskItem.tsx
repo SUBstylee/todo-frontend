@@ -49,7 +49,7 @@ const TaskItem = ({ task }: TaskItemProps) => {
 			</div>
 			<button
 				onClick={() => console.log('task deleted, but not really')}
-				className='text-gray-400 hover:text-red-500 shrink-0 ml-8'>
+				className='text-gray-400 cursor-pointer hover:text-red-500 shrink-0 ml-8'>
 				<Image src='/trash.svg' alt='Delete Task' width={20} height={20} />
 			</button>
 		</div>
