@@ -3,6 +3,8 @@ import AppButton from './AppButton';
 import Input from './Input';
 import ColorCode from './ColorCode';
 
+import copy from '@/data/copy.json';
+
 const TaskForm = ({
 	title,
 	setTitle,
@@ -11,6 +13,7 @@ const TaskForm = ({
 	handleSubmit,
 	label,
 	svgSrc,
+	svgAlt,
 	placeHolder,
 }: TaskFormProps) => {
 	return (
@@ -27,13 +30,13 @@ const TaskForm = ({
 			/>
 			<AppButton
 				handleClick={handleSubmit}
-				textContent={'Add Task'}
+				textContent={copy.taskForm.appButton.textContent}
 				width={20}
 				height={20}
 				imgSrc={svgSrc}
-				alt='Add Task Plus Icon'
-				imgClassName='inline-block'
-				btnClassName='mt-8'
+				alt={svgAlt}
+				imgClassName={'inline-block'}
+				btnClassName={'mt-8'}
 			/>
 		</>
 	);

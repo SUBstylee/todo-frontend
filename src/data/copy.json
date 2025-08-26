@@ -22,5 +22,23 @@
 	},
 	"taskItem": {
 		"deleteAlt": "Delete Task Icon"
+	},
+	"createPage": {
+		"taskForm": {
+			"label": "Add Task",
+			"svgAlt": "Add Task Plus Icon",
+			"placeholder": "Ex. Brush your teeth"
+		}
+	},
+	"backButton": {
+		"alt": "Go Back"
+	},
+	"taskForm": {
+		"appButton": {
+			"textContent": "Add Task"
+		}
+	},
+	"colorCode": {
+		"label": "Color"
 	}
 }

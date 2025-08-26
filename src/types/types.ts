@@ -35,6 +35,7 @@ export interface TaskFormProps {
 	setSelectedColor: React.Dispatch<React.SetStateAction<string>>;
 	label: string;
 	svgSrc: string;
+	svgAlt: string;
 	placeHolder: string;
 	handleSubmit: () => void;
 }
