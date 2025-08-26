@@ -1,0 +1,26 @@
+{
+	"homePage": {
+		"createTaskButton": {
+			"text": "Create Task",
+			"alt": "Create Task Plus Icon"
+		}
+	},
+	"header": {
+		"rocketAlt": "Todo Rocket Icon",
+		"todoText": "Todo",
+		"appText": "App"
+	},
+	"taskCounter": {
+		"tasksLabel": "Tasks: ",
+		"completedLabel": "Completed: ",
+		"completedOfTotal": "{completed} de {total}"
+	},
+	"taskList": {
+		"emptyStateAlt": "Clipboard",
+		"emptyStateText": "You don't have any tasks registered yet.",
+		"emptyStateHint": "Create tasks and organize your to-do items."
+	},
+	"taskItem": {
+		"deleteAlt": "Delete Task Icon"
+	}
+}

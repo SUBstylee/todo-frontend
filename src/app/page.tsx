@@ -9,6 +9,7 @@ import TaskCounter from '@/components/TaskCounter';
 import TaskList from '@/components/TaskList';
 
 import { mockTasks } from '@/constants/stub';
+import copy from '@/data/copy.json';
 
 export default function Home() {
 	const [tasks, setTasks] = useState<TaskProps[]>(mockTasks);
@@ -19,22 +20,25 @@ export default function Home() {
 		console.log('useEffect');
 	}, []);
 	return (
-		<div className='min-h-screen bg-[#1a1a1a] text-white flex flex-col items-center'>
+		<div
+			className={
+				'min-h-screen bg-[#1a1a1a] text-white flex flex-col items-center'
+			}>
 			<Header />
-			<div className='w-full max-w-2xl flex flex-col relative px-4 sm:px-0'>
+			<div className={'w-full max-w-2xl flex flex-col relative px-4 sm:px-0'}>
 				<AppButton
 					handleClick={() => router.push('/create')}
-					textContent={'Create Task'}
+					textContent={copy.homePage.createTaskButton.text}
 					width={20}
 					height={20}
-					imgSrc='/addtask.svg'
-					alt='Create Task Plus Icon'
-					imgClassName='inline-block'
-					btnClassName='-mt-6'
+					imgSrc={'/addtask.svg'}
+					alt={copy.homePage.createTaskButton.alt}
+					imgClassName={'inline-block'}
+					btnClassName={'-mt-6'}
 				/>
 				<TaskCounter tasks={tasks} completedTasks={completedTasks} />
 			</div>
-			<main className='w-full max-w-2xl mt-6'>
+			<main className={'w-full max-w-2xl mt-6'}>
 				<TaskList tasks={tasks} />
 			</main>
 		</div>
