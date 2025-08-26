@@ -11,14 +11,7 @@ import { mockTasks } from '@/constants/stub';
 
 export default function Home() {
 	const [tasks, setTasks] = useState<Task[]>(mockTasks);
-	const completedTasks = tasks.filter((task)=> task.completedStatus);
-
-	//   export interface Task {
-	// 	id: number;
-	// 	title: string;
-	// 	completedStatus: boolean;
-	// 	color?: string;
-	// }
+	const completedTasks = tasks.filter((task) => task.completedStatus);
 
 	useEffect(() => {
 		console.log('useEffect');

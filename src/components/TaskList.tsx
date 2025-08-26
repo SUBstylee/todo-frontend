@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import { TaskListProps } from '@/types/types';
+import TaskItem from './TaskItem';
 
 const TaskList = ({ tasks }: TaskListProps) => {
 	return (
 		<div>
 			{tasks.length ? (
-				<div>there are tasks</div>
+				tasks.map((task) => <TaskItem key={task.id} />)
 			) : (
 				<div className='flex flex-col items-center text-center'>
 					<hr className='w-full h-[15px] border-t border-solid border-gray-500 rounded-full mb-5' />
