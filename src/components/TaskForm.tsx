@@ -1,6 +1,7 @@
 import { TaskFormProps } from '@/types/types';
 import AppButton from './AppButton';
 import Input from './Input';
+import ColorCode from './ColorCode';
 
 const TaskForm = ({
 	title,
@@ -20,6 +21,10 @@ const TaskForm = ({
 				label={label}
 				placeHolder={placeHolder}
 			/>
+			<ColorCode
+				selectedColor={selectedColor}
+				setSelectedColor={setSelectedColor}
+			/>
 			<AppButton
 				handleClick={handleSubmit}
 				textContent={'Add Task'}
@@ -28,7 +33,7 @@ const TaskForm = ({
 				imgSrc={svgSrc}
 				alt='Add Task Plus Icon'
 				imgClassName='inline-block'
-				btnClassName='mt-6'
+				btnClassName='mt-8'
 			/>
 		</>
 	);

@@ -45,3 +45,8 @@ export interface InputProps {
 	label: string;
 	placeHolder: string;
 }
+
+export interface ColorCodeProps {
+	selectedColor: string;
+	setSelectedColor: React.Dispatch<React.SetStateAction<string>>;
+}
