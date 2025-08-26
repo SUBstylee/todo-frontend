@@ -1,6 +1,6 @@
-import { Task } from '@/types/types';
+import { TaskProps } from '@/types/types';
 
-export const mockTasks: Task[] = [
+export const mockTasks: TaskProps[] = [
 	{
 		id: 1,
 		title: 'Buy groceries',

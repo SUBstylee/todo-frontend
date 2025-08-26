@@ -1,4 +1,4 @@
-export interface Task {
+export interface TaskProps {
 	id: number;
 	title: string;
 	completedStatus: boolean;
@@ -6,8 +6,8 @@ export interface Task {
 }
 
 export interface TaskCounterProps {
-	tasks: Task[];
-	completedTasks: Task[];
+	tasks: TaskProps[];
+	completedTasks: TaskProps[];
 }
 
 export interface Button {
@@ -19,6 +19,9 @@ export interface Button {
 	textContent: string;
 }
 
+export interface TaskItemProps {
+	task: TaskProps;
+}
 export interface TaskListProps {
-	tasks: Task[];
+	tasks: TaskProps[];
 }

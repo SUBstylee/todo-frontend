@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { Task } from '../types/types';
+import { TaskProps } from '../types/types';
 
 import Header from '@/components/Header';
 import AppButton from '@/components/AppButton';
@@ -10,7 +10,7 @@ import TaskList from '@/components/TaskList';
 import { mockTasks } from '@/constants/stub';
 
 export default function Home() {
-	const [tasks, setTasks] = useState<Task[]>(mockTasks);
+	const [tasks, setTasks] = useState<TaskProps[]>(mockTasks);
 	const completedTasks = tasks.filter((task) => task.completedStatus);
 
 	useEffect(() => {
