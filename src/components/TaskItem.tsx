@@ -6,7 +6,7 @@ const TaskItem = ({ task }: TaskItemProps) => {
 	return (
 		<div
 			key={task.id}
-			className={`flex items-center justify-between p-4 rounded-md bg-gray-700 ${
+			className={`flex items-center justify-between p-4 rounded-md bg-gray-800 ${
 				task.completedStatus ? 'text-gray-500' : 'text-white'
 			}`}>
 			<div className='flex items-center gap-4 flex-1'>
