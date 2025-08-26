@@ -33,3 +33,21 @@ export const toggleCompletion = async (
 		console.error('Error updating task:', error);
 	}
 };
+
+export const deleteTask = async (
+	id: number,
+	setTasks: React.Dispatch<React.SetStateAction<TaskProps[]>>,
+): Promise<void> => {
+	try {
+		const response = await fetch(`http://localhost:5001/tasks/${id}`, {
+			method: 'DELETE',
+		});
+		if (response.ok) {
+			setTasks((prev) => prev.filter((task) => task.id !== id));
+		} else {
+			console.error('Failed to delete task');
+		}
+	} catch (error) {
+		console.error('Error deleting task:', error);
+	}
+};

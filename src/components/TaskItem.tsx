@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 import copy from '@/data/copy.json';
 
-const TaskItem = ({ task, toggleCompletion }: TaskItemProps) => {
+const TaskItem = ({ task, toggleCompletion, deleteTask }: TaskItemProps) => {
 	return (
 		<div
 			key={task.id}
@@ -55,7 +55,7 @@ const TaskItem = ({ task, toggleCompletion }: TaskItemProps) => {
 				</span>
 			</div>
 			<button
-				onClick={() => console.log('task deleted, but not really')}
+				onClick={() => deleteTask(task.id)}
 				className={
 					'text-gray-400 cursor-pointer hover:text-red-500 shrink-0 ml-8'
 				}>

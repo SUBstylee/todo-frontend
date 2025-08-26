@@ -24,10 +24,12 @@ export interface ButtonProps {
 export interface TaskItemProps {
 	task: TaskProps;
 	toggleCompletion: (id: number) => void;
+	deleteTask: (id: number) => void;
 }
 export interface TaskListProps {
 	tasks: TaskProps[];
 	toggleCompletion: (id: number) => void;
+	deleteTask: (id: number) => void;
 }
 
 export interface TaskFormProps {

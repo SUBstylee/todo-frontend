@@ -9,7 +9,7 @@ import TaskCounter from '@/components/TaskCounter';
 import TaskList from '@/components/TaskList';
 import Loading from '@/components/Loading';
 
-import { fetchTasks, toggleCompletion } from '@/utils/api';
+import { fetchTasks, toggleCompletion, deleteTask } from '@/utils/api';
 
 import copy from '@/data/copy.json';
 
@@ -59,6 +59,7 @@ const Home = () => {
 					<TaskList
 						tasks={tasks}
 						toggleCompletion={(id) => toggleCompletion(id, tasks, setTasks)}
+						deleteTask={(id) => deleteTask(id, setTasks)}
 					/>
 				)}
 			</main>
