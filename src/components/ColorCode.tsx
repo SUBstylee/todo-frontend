@@ -9,7 +9,7 @@ const ColorCode = ({ selectedColor, setSelectedColor }: ColorCodeProps) => {
 				className='text-lg font-medium text-left w-full mt-6 mb-2'>
 				Color
 			</label>
-			<div className='flex gap-4'>
+			<div className='flex gap-4 justify-start'>
 				{COLORS.map((color) => (
 					<button
 						key={color}
@@ -20,7 +20,7 @@ const ColorCode = ({ selectedColor, setSelectedColor }: ColorCodeProps) => {
 							backgroundColor: color,
 							border: selectedColor === color ? '2px solid white' : 'none',
 						}}
-						className='w-10 h-10 rounded-full'></button>
+						className='w-10 h-10 rounded-full cursor-pointer'></button>
 				))}
 			</div>
 		</>
