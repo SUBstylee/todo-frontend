@@ -21,7 +21,7 @@ export default function Home() {
 	return (
 		<div className='min-h-screen bg-[#1a1a1a] text-white flex flex-col items-center'>
 			<Header />
-			<div className='w-full max-w-2xl flex flex-col relative'>
+			<div className='w-full max-w-2xl flex flex-col relative px-4 sm:px-0'>
 				<AppButton
 					handleClick={() => router.push('/create')}
 					textContent={'Create Task'}

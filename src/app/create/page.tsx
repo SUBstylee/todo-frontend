@@ -14,7 +14,7 @@ const CreateTaskPage = () => {
 	return (
 		<div className='min-h-screen bg-[#1a1a1a] text-white flex flex-col items-center'>
 			<Header />
-			<main className='w-full max-w-2xl flex flex-col items-center mt-12'>
+			<main className='w-full max-w-2xl flex flex-col mt-12 px-4 sm:px-0'>
 				<BackButton />
 				<TaskForm
 					title={title}
