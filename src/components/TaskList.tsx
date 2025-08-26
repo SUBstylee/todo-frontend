@@ -4,7 +4,7 @@ import TaskItem from './TaskItem';
 
 const TaskList = ({ tasks }: TaskListProps) => {
 	return (
-		<div>
+		<div className='w-full max-w-2xl flex flex-col gap-4 mb-6'>
 			{tasks.length ? (
 				tasks.map((task) => <TaskItem key={task.id} task={task} />)
 			) : (
