@@ -75,3 +75,29 @@ export const createTask = async (title: string, color: string) => {
 
 	return response.json();
 };
+
+export const fetchTaskById = async (taskId: number) => {
+	const response = await fetch(`http://localhost:5001/tasks/${taskId}`);
+	if (!response.ok) {
+		throw new Error('Task not found');
+	}
+	return response.json();
+};
+
+export const saveTask = async (
+	taskId: number,
+	title: string,
+	color: string,
+) => {
+	const response = await fetch(`http://localhost:5001/tasks/${taskId}`, {
+		method: 'PUT',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({ title, color }),
+	});
+
+	if (!response.ok) {
+		throw new Error('Failed to save task');
+	}
+
+	return response.json();
+};

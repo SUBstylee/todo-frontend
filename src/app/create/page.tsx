@@ -16,10 +16,8 @@ const CreateTaskPage = () => {
 	const router = useRouter();
 
 	const handleCreateTask = async () => {
+		if (!title.trim()) return alert('Title is required!');
 		try {
-			if (!title) {
-				return alert('Title cannot be empty!');
-			}
 			await createTask(title, selectedColor);
 			router.push('/');
 		} catch (error) {
