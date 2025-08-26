@@ -10,12 +10,13 @@ export interface TaskCounterProps {
 	completedTasks: TaskProps[];
 }
 
-export interface Button {
+export interface ButtonProps {
 	width?: number;
 	height?: number;
 	imgSrc?: string;
 	alt?: string;
-	className?: string;
+	imgClassName?: string;
+	btnClassName?: string;
 	textContent: string;
 }
 
@@ -24,4 +25,15 @@ export interface TaskItemProps {
 }
 export interface TaskListProps {
 	tasks: TaskProps[];
+}
+
+export interface TaskFormProps {
+	title: string;
+	setTitle: (title: string) => void;
+	selectedColor: string;
+	setSelectedColor: React.Dispatch<React.SetStateAction<string>>;
+	label: string;
+	svgSrc: string;
+	placeHolder: string;
+	handleSubmit: () => void;
 }

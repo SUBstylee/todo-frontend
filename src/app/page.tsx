@@ -26,7 +26,8 @@ export default function Home() {
 					height={20}
 					imgSrc='/addtask.svg'
 					alt='Create Task Plus Icon'
-					className='inline-block'
+					imgClassName='inline-block'
+					btnClassName='-mt-6'
 				/>
 				<TaskCounter tasks={tasks} completedTasks={completedTasks} />
 			</div>
