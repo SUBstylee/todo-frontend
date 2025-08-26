@@ -6,12 +6,27 @@ import Header from '@/components/Header';
 import BackButton from '@/components/BackButton';
 import TaskForm from '@/components/TaskForm';
 
+import { createTask } from '@/utils/api';
+
 import copy from '@/data/copy.json';
 
 const CreateTaskPage = () => {
 	const [title, setTitle] = useState('');
 	const [selectedColor, setSelectedColor] = useState<string>('#fff');
 	const router = useRouter();
+
+	const handleCreateTask = async () => {
+		try {
+			if (!title) {
+				return alert('Title cannot be empty!');
+			}
+			await createTask(title, selectedColor);
+			router.push('/');
+		} catch (error) {
+			console.error('Error creating task:', error);
+			alert('An error occurred while creating the task.');
+		}
+	};
 
 	return (
 		<div
@@ -30,7 +45,7 @@ const CreateTaskPage = () => {
 					svgSrc={'/addtask.svg'}
 					svgAlt={copy.createPage.taskForm.svgAlt}
 					placeHolder={copy.createPage.taskForm.placeholder}
-					handleSubmit={() => console.log('submitted, but not really')}
+					handleSubmit={handleCreateTask}
 				/>
 			</main>
 		</div>

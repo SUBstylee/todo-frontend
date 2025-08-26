@@ -11,7 +11,7 @@ export const fetchTasks = async (): Promise<TaskProps[]> => {
 export const toggleCompletion = async (
 	id: number,
 	tasks: TaskProps[],
-	setTasks: (tasks: TaskProps[]) => void,
+	setTasks: React.Dispatch<React.SetStateAction<TaskProps[]>>,
 ): Promise<void> => {
 	const task = tasks.find((task) => task.id === id);
 	if (!task) return;
@@ -25,7 +25,7 @@ export const toggleCompletion = async (
 		});
 
 		if (response.ok) {
-			setTasks(tasks.map((t) => (t.id === id ? updatedTask : t)));
+			setTasks((prev) => prev.map((t) => (t.id === id ? updatedTask : t)));
 		} else {
 			console.error('Failed to update task');
 		}
@@ -50,4 +50,28 @@ export const deleteTask = async (
 	} catch (error) {
 		console.error('Error deleting task:', error);
 	}
+};
+
+export const createTask = async (title: string, color: string) => {
+	if (!title.trim()) {
+		throw new Error('Title is required');
+	}
+
+	const response = await fetch('http://localhost:5001/tasks', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({
+			title,
+			color,
+			completedStatus: false,
+		}),
+	});
+
+	if (!response.ok) {
+		throw new Error('Failed to create task.');
+	}
+
+	return response.json();
 };
