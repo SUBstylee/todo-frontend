@@ -7,8 +7,18 @@ import AppButton from '@/components/AppButton';
 import TaskCounter from '@/components/TaskCounter';
 import TaskList from '@/components/TaskList';
 
+import { mockTasks } from '@/constants/stub';
+
 export default function Home() {
-	const [tasks, setTasks] = useState<Task[]>([]);
+	const [tasks, setTasks] = useState<Task[]>(mockTasks);
+	const completedTasks = tasks.filter((task)=> task.completedStatus);
+
+	//   export interface Task {
+	// 	id: number;
+	// 	title: string;
+	// 	completedStatus: boolean;
+	// 	color?: string;
+	// }
 
 	useEffect(() => {
 		console.log('useEffect');
@@ -25,10 +35,10 @@ export default function Home() {
 					alt='Create Task Plus Icon'
 					className='inline-block'
 				/>
-				<TaskCounter tasks={tasks} />
+				<TaskCounter tasks={tasks} completedTasks={completedTasks} />
 			</div>
 			<main className='w-full max-w-2xl mt-6'>
-				<TaskList />
+				<TaskList tasks={tasks} />
 			</main>
 		</div>
 	);
