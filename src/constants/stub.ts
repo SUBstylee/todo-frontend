@@ -5,18 +5,18 @@ export const mockTasks: TaskProps[] = [
 		id: 1,
 		title: 'Buy groceries',
 		completedStatus: false,
-		color: 'green',
+		color: '#2fc85c',
 	},
 	{
 		id: 2,
 		title: 'Finish TypeScript project',
 		completedStatus: true,
-		color: 'blue',
+		color: '#0c7aff',
 	},
 	{
 		id: 3,
 		title: 'Call mom',
 		completedStatus: false,
-		color: 'red',
+		color: '#ff3c30',
 	},
 ];
