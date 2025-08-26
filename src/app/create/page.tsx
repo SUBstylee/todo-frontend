@@ -22,7 +22,7 @@ const CreateTaskPage = () => {
 					selectedColor={selectedColor}
 					setSelectedColor={setSelectedColor}
 					label='Add Task'
-					svgSrc='addtask.svg'
+					svgSrc='/addtask.svg'
 					placeHolder='Ex. Brush your teeth'
 					handleSubmit={() => console.log('submitted, but not really')}
 				/>

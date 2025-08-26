@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import { TaskItemProps } from '@/types/types';
+import Link from 'next/link';
 
 const TaskItem = ({ task }: TaskItemProps) => {
 	return (
@@ -42,7 +43,9 @@ const TaskItem = ({ task }: TaskItemProps) => {
 					className={`${
 						task.completedStatus ? 'line-through text-gray-500' : ''
 					} break-words flex-1`}>
-					{task.title}
+					<Link href={`/edit/${task.id}`} className='hover:underline'>
+						{task.title}
+					</Link>
 				</span>
 			</div>
 			<button
