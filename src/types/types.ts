@@ -7,6 +7,7 @@ export interface Task {
 
 export interface TaskCounterProps {
 	tasks: Task[];
+	completedTasks: Task[];
 }
 
 export interface Button {
@@ -16,4 +17,8 @@ export interface Button {
 	alt?: string;
 	className?: string;
 	textContent: string;
+}
+
+export interface TaskListProps {
+	tasks: Task[];
 }
