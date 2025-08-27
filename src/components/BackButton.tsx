@@ -10,6 +10,7 @@ const BackButton: React.FC = () => {
 
 	return (
 		<button
+			aria-label={copy.backButton.alt}
 			onClick={handleBackClick}
 			className={'self-start text-blue-500 mb-6 cursor-pointer'}>
 			<Image
