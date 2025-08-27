@@ -8,7 +8,6 @@ import copy from '@/data/copy.json';
 const TaskItem = ({ task, toggleCompletion, deleteTask }: TaskItemProps) => {
 	return (
 		<div
-			key={task.id}
 			className={`flex items-center justify-between p-4 rounded-md bg-gray-800 ${
 				task.completedStatus ? 'text-gray-500' : 'text-white'
 			}`}>
