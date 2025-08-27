@@ -27,9 +27,11 @@ const TaskItem = ({ task, toggleCompletion, deleteTask }: TaskItemProps) => {
 						checked={task.completedStatus}
 						onChange={() => toggleCompletion(task.id)}
 						className={'opacity-0 absolute w-full h-full cursor-pointer'}
+						aria-label={`${copy.taskItem.inputAria} ${task.title}`}
 					/>
 					{task.completedStatus && (
 						<svg
+							data-testid='checkmark'
 							xmlns={'http://www.w3.org/2000/svg'}
 							viewBox={'0 0 24 24'}
 							fill={task.color === '#fff' || !task.color ? 'black' : 'white'}
@@ -63,6 +65,7 @@ const TaskItem = ({ task, toggleCompletion, deleteTask }: TaskItemProps) => {
 					alt={copy.taskItem.deleteAlt}
 					width={20}
 					height={20}
+					aria-label={`${copy.taskItem.deleteAria} ${task.title}`}
 				/>
 			</button>
 		</div>
