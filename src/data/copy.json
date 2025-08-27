@@ -23,7 +23,8 @@
 	"taskItem": {
 		"inputAria": "Toggle completion for",
 		"deleteAlt": "Delete Task Icon",
-		"deleteAria": "Delete"
+		"deleteAria": "Delete",
+		"deleteConfirmation": "Are you sure you want to delete this task?"
 	},
 	"createPage": {
 		"taskForm": {

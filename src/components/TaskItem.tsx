@@ -56,7 +56,11 @@ const TaskItem = ({ task, toggleCompletion, deleteTask }: TaskItemProps) => {
 				</span>
 			</div>
 			<button
-				onClick={() => deleteTask(task.id)}
+				onClick={() => {
+					if (window.confirm(copy.taskItem.deleteConfirmation)) {
+						deleteTask(task.id);
+					}
+				}}
 				className={
 					'text-gray-400 cursor-pointer hover:text-red-500 shrink-0 ml-8'
 				}>
