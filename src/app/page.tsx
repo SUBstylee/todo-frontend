@@ -34,7 +34,7 @@ const Home = () => {
 	}, []);
 
 	return (
-		<div
+		<main
 			className={
 				'min-h-screen bg-[#1a1a1a] text-white flex flex-col items-center'
 			}>
@@ -47,6 +47,7 @@ const Home = () => {
 					height={20}
 					imgSrc={'/addtask.svg'}
 					alt={copy.homePage.createTaskButton.alt}
+					ariaLabel={copy.homePage.createTaskButton.text}
 					imgClassName={'inline-block'}
 					btnClassName={'-mt-6'}
 				/>
@@ -54,7 +55,9 @@ const Home = () => {
 			</div>
 			<main className={'w-full max-w-2xl mt-6'}>
 				{isLoading ? (
-					<Loading />
+					<div role='status' aria-live='polite'>
+						<Loading />
+					</div>
 				) : (
 					<TaskList
 						tasks={tasks}
@@ -63,7 +66,7 @@ const Home = () => {
 					/>
 				)}
 			</main>
-		</div>
+		</main>
 	);
 };
 

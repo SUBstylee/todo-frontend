@@ -15,6 +15,7 @@ export interface ButtonProps {
 	height?: number;
 	imgSrc?: string;
 	alt?: string;
+	ariaLabel?: string;
 	imgClassName?: string;
 	btnClassName?: string;
 	textContent: string;
