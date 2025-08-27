@@ -14,6 +14,7 @@ const ColorCode = ({ selectedColor, setSelectedColor }: ColorCodeProps) => {
 			<div className={'flex gap-4 justify-start'}>
 				{COLORS.map((color) => (
 					<button
+						aria-label={`${copy.colorCode.ariaLabel} ${color}`}
 						key={color}
 						onClick={() =>
 							setSelectedColor((prev) => (prev === color ? '#fff' : color))

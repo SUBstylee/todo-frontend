@@ -39,7 +39,8 @@
 		}
 	},
 	"colorCode": {
-		"label": "Color"
+		"label": "Color",
+		"ariaLabel": "Select color"
 	},
 	"editPage": {
 		"input": {
