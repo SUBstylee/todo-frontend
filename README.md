@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Todo App - Local Development Guide
 
-## Getting Started
+This guide provides step-by-step instructions for running the Todo App locally, including both the frontend and backend, and setting up the database with Prisma.
 
-First, run the development server:
+---
+
+## Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+- [MySQL](https://www.mysql.com/) or compatible database
+
+---
+
+## 1. Clone the Repositories
+
+Open a terminal and run:
+
+```bash
+git clone git@github.com:SUBstylee/todo-backend.git
+git clone git@github.com:SUBstylee/todo-frontend.git
+```
+
+---
+
+## 2. Backend Setup
+
+### 2.1 Install Dependencies
+
+```bash
+cd todo-backend
+npm install
+```
+
+### 2.2 Configure Environment Variables
+
+Create a `.env` file in `todo-backend`:
+
+```env
+PORT=5001
+DATABASE_URL="mysql://todo_user:password@localhost:3306/todo_db"
+NODE_ENV=development
+CORS_ORIGIN=http://localhost:3000
+```
+
+### 2.3 Prepare the Database
+
+1. Start your MySQL server.
+2. Create the database and user if needed:
+
+```sql
+CREATE DATABASE todo_db;
+CREATE USER 'todo_user'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON todo_db.* TO 'todo_user'@'localhost';
+FLUSH PRIVILEGES;
+```
+
+3. Run Prisma migrations and (optionally) seed:
+
+```bash
+npx prisma migrate dev --name init
+npx prisma db seed
+```
+
+### 2.4 Start the Backend Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The backend should now be running at [http://localhost:5001](http://localhost:5001).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 3. Frontend Setup
 
-## Learn More
+### 3.1 Install Dependencies
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+cd ../todo-frontend
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 3.2 Configure Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Create a `.env` file in `todo-frontend`:
 
-## Deploy on Vercel
+```env
+NEXT_PUBLIC_API_BASE_URL="http://localhost:5001"
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 3.3 Start the Frontend
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run dev
+```
+
+Your app will be available at [http://localhost:3000](http://localhost:3000).
+
+---
+
+## 4. Test the App
+
+- **Backend health check:**  
+  Visit [http://localhost:5001/health](http://localhost:5001/health) in your browser. It should show "Server is healthy".
+- **Frontend:**  
+  Go to [http://localhost:3000](http://localhost:3000) and use the Todo app (add, complete, edit, and delete tasks).
+
+Additionally you can run tests on both Frontend and Backend:
+
+```bash
+npm run test
+```
+
+---
+
+## 5. Troubleshooting
+
+- **Backend database errors:** Ensure MySQL is running and `DATABASE_URL` is correct in `.env`.
+- **Frontend can't fetch data:** Make sure the backend is running and `NEXT_PUBLIC_API_BASE_URL` is correct.
+- **404 errors:** Check that the backend server is running and your routes are correct.
