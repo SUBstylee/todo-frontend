@@ -1,7 +1,9 @@
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
 import { TaskProps } from '../types/types';
 
 export const fetchTasks = async (): Promise<TaskProps[]> => {
-	const response = await fetch('http://localhost:5001/tasks');
+	const response = await fetch(`${BASE_URL}/tasks`);
 	if (!response.ok) {
 		throw new Error('Failed to fetch tasks');
 	}
@@ -18,7 +20,7 @@ export const toggleCompletion = async (
 
 	try {
 		const updatedTask = { ...task, completedStatus: !task.completedStatus };
-		const response = await fetch(`http://localhost:5001/tasks/${id}`, {
+		const response = await fetch(`${BASE_URL}/tasks/${id}`, {
 			method: 'PUT',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(updatedTask),
@@ -39,7 +41,7 @@ export const deleteTask = async (
 	setTasks: React.Dispatch<React.SetStateAction<TaskProps[]>>,
 ): Promise<void> => {
 	try {
-		const response = await fetch(`http://localhost:5001/tasks/${id}`, {
+		const response = await fetch(`${BASE_URL}/tasks/${id}`, {
 			method: 'DELETE',
 		});
 		if (response.ok) {
@@ -57,7 +59,7 @@ export const createTask = async (title: string, color: string) => {
 		throw new Error('Title is required');
 	}
 
-	const response = await fetch('http://localhost:5001/tasks', {
+	const response = await fetch(`${BASE_URL}/tasks`, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
@@ -77,7 +79,7 @@ export const createTask = async (title: string, color: string) => {
 };
 
 export const fetchTaskById = async (taskId: number) => {
-	const response = await fetch(`http://localhost:5001/tasks/${taskId}`);
+	const response = await fetch(`${BASE_URL}/tasks/${taskId}`);
 	if (!response.ok) {
 		throw new Error('Task not found');
 	}
@@ -89,7 +91,7 @@ export const saveTask = async (
 	title: string,
 	color: string,
 ) => {
-	const response = await fetch(`http://localhost:5001/tasks/${taskId}`, {
+	const response = await fetch(`${BASE_URL}/tasks/${taskId}`, {
 		method: 'PUT',
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({ title, color }),
