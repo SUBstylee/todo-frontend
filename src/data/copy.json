@@ -21,7 +21,9 @@
 		"emptyStateHint": "Create tasks and organize your to-do items."
 	},
 	"taskItem": {
-		"deleteAlt": "Delete Task Icon"
+		"inputAria": "Toggle completion for",
+		"deleteAlt": "Delete Task Icon",
+		"deleteAria": "Delete"
 	},
 	"createPage": {
 		"taskForm": {

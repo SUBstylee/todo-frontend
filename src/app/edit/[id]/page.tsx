@@ -71,7 +71,7 @@ const EditTaskPage = () => {
 							title={title}
 							setTitle={setTitle}
 							label={copy.editPage.input.label}
-							placeHolder={''}
+							placeHolder={copy.createPage.taskForm.placeholder}
 						/>
 
 						<ColorCode
