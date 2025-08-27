@@ -4,11 +4,13 @@ const Input = ({ title, setTitle, label, placeHolder }: InputProps) => {
 	return (
 		<>
 			<label
+				htmlFor='task-input'
 				style={{ color: '#4EA8DE' }}
 				className={'text-lg font-medium text-left w-full mb-4'}>
 				{label}
 			</label>
 			<input
+				id='task-input'
 				type={'text'}
 				placeholder={placeHolder}
 				value={title}
